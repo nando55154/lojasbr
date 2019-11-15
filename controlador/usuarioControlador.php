@@ -1,6 +1,6 @@
 <?php
 
-require_once "./servico/validacaoServico.php";
+//require_once "./servico/validacaoServico.php";
 
 require_once "./modelo/usuarioModelo.php";
 
@@ -17,51 +17,14 @@ function adicionar() {
         $email = $_POST["email"];
         $senha = $_POST["senha"];
         $cpf = $_POST["cpf"];
-        $nascimento = $_POST["nascimento"];
+        $nascimento = $_POST["data"];
         $sexo = $_POST["sexo"];
-
-        $error = array();
-
-
-        // Validacao Geral
-        $valNome = validarNome($nome);
-
-        $valSobrenome = validarNome($sobrenome);
-
-        $valEmail = validarEmail($email);
-
-        $valSenha = validarSenha($senha);
-
-        $valData = validarData($nascimento);
-
-        $validacaoCpf = isCPFValido($cpf);
-
-        if ($valNome == false) {
-            $error[] = "Insira um nome";
-            if ($valSobrenome == false) {
-                $error[] = "Insira um sobrenome";
-                if ($valEmail == false) {
-                    $error[] = "Insira um email valido";
-                    if ($valSenha == false) {
-                        $error[] = "Insira uma enha sem caracteres especiais";
-                        if ($valSenha == false) {
-                            $error[] = "Insira uma enha sem caracteres especiais";
-                            if ($valData == false) {
-                                $error[] = "Insira uma data valida";
-                                if ($validacaoCpf == false) {
-                                    $error[] = "CPF invalido"; 
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            print_r($error);
-        } else {
-            $msg = adicionarUsuario($nome, $sobrenome, $email, $senha, $cpf, $nascimento, $sexo);
+        $msg = adicionarUsuario($nome, $sobrenome, $email, $senha, $cpf, $nascimento, $sexo);
+        redirecionar("usuario/adicionar");
+        }else {
+               exibir("usuario/formulario");
         }
-    }
-    exibir("usuario/formulario");
+
 }
 
 function deletar($id) {

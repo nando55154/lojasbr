@@ -3,13 +3,15 @@
 	<div class="form__top">
 			<h2>CADASTR<span>AR-SE</span></h2>
 	</div>		
-        <form class="form__reg" action="">
-            <input class="input" type="text" placeholder="&#128100;  Nome..." required autofocus>
-            <input class="input" type="text" placeholder="&#128100;  Sobrenome..." required autofocus>
-            <input class="input" type="email" placeholder="&#9993;  Email..." required>
-            <input class="input" type="password" placeholder="&#8962;  Criar Senha..." required>
-            <input class="input" type="password" placeholder="&#8962;  Confirmar Senha..." required>
-            <input class="input" type="number" placeholder="&#128222;  Telefone..." required>
+        <form class="form__reg" action="" method="POST">
+            <input class="input" type="text" placeholder="&#128100;  Nome..." name ="nome" required autofocus>
+            <input class="input" type="text" placeholder="&#128100;  Sobrenome..." name ="sobrenome" required autofocus>
+            <input class="input" type="email" placeholder="&#9993;  Email..." name ="email" required>
+            <input class="input" type="password" placeholder="&#8962; Senha..." name ="senha" required>
+            <input class="input" type="text" placeholder="&#128222;  CPF..." name ="cpf" required>
+            <input type="date" name="data" placeholder="&#128222; Nascimento" required>
+            <input type="radio" name="sexo" value="M">Masculino
+            <input type="radio" name="sexo" value="F">Femenino
             <div class="btn__form">
                 <input class="btn__submit" type="submit" value="CADASTRAR-SE">
                 <input class="btn__reset" type="reset" value="LIMPAR">	

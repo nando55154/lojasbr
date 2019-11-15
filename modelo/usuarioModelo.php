@@ -52,3 +52,10 @@ function pegarUsuarioPorId($id) {
     $usuario = mysqli_fetch_assoc($resultado);
     return $usuario;
 }
+
+function pegarUsuarioPorEmailSenha($email, $senha) {
+    $sql = "SELECT * FROM usuario WHERE Email= '$email' and Senha = '$senha'";
+    $resultado = mysqli_query(conn(), $sql);
+    $usuario = mysqli_fetch_assoc($resultado);
+    return $usuario;
+}

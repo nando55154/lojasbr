@@ -9,13 +9,13 @@
 
 
 
-<a href="./usuario/listar">Usuario</a>
+<a href="./usuario/listar">Listar todos os Usuarios</a><br>
 
-<a href="./produto/listar">Produto</a>
-<a href="./categoria/listar">Categoria</a>
-<a href="./carrinho/mostrarProdutos">Comprar</a><br>
+<a href="./produto/listar">Listar todos os Produto</a><br>
+<a href="./categoria/listar">Listar todas as Categoria</a><br>
+<a href="./carrinho/listarCarrinho">Comprar</a><br><br>
 
 
-<a href="./usuario/adicionar">Adicionar Usuario</a>
-<a href="./produto/adicionar">Adicionar Produto</a>
-<a href="./categoria/adicionar">Adicionar Categoria</a><br><br><br>
+<a href="./usuario/adicionar">Adicionar Usuario</a><br>
+<a href="./produto/adicionar">Adicionar Produto</a><br>
+<a href="./categoria/adicionar">Adicionar Categoria</a><br>

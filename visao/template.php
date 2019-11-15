@@ -12,6 +12,7 @@
     </head>
     <body class="container">
         <?php require("./visao/cabecalho.php"); ?>
+        <br><br><br>
             <main class="container">
                <?php require $viewFilePath; ?>
             </main>

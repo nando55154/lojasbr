@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS usuario(
 	Cpf VARCHAR(11) NOT NULL,
 	Nascimento VARCHAR(10) NOT NULL,
 	Sexo VARCHAR(1) NOT NULL,
+    Papel VARCHAR(100) NOT NULL DEFAULT 'usuario',
 	PRIMARY KEY(idUsuario)
 );
 
@@ -22,8 +23,8 @@ CREATE TABLE IF NOT EXISTS produto(
 	NomeProduto VARCHAR(30) NOT NULL,
 	Descricao VARCHAR(60) NOT NULL,
 	Categoria VARCHAR(20) NOT NULL,
-        EstoqueMin VARCHAR(9) NOT NULL,
-        EstoqueMax VARCHAR(9) NOT NULL,
+    EstoqueMin VARCHAR(9) NOT NULL,
+    EstoqueMax VARCHAR(9) NOT NULL,
 	PRIMARY KEY(idProduto)
 );
 
@@ -76,7 +77,7 @@ CREATE TABLE IF NOT EXISTS pedido_produto(
 );
 
 CREATE TABLE IF NOT EXISTS estoque(
-	idEstoque INT(11) NOT NULL,
+	idEstoque INT(11) NOT NULL AUTO_INCREMENT,
 	idProduto INT(11) NOT NULL,
 	Quantidade INT(11) NOT NULL,
 	PRIMARY KEY(idEstoque),
@@ -87,4 +88,10 @@ CREATE TABLE IF NOT EXISTS categoria(
 	idCategoria INT(11) NOT NULL AUTO_INCREMENT,
         Nome VARCHAR(20) NOT NULL,
 	PRIMARY KEY(idCategoria)
+);
+
+CREATE TABLE IF NOT EXISTS forma_pagamento (
+idformaPagamento INT NOT NULL AUTO_INCREMENT,
+descricao VARCHAR(100) NOT NULL,
+PRIMARY KEY (idformaPagamento)
 );
