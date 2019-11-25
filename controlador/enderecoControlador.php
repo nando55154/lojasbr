@@ -2,7 +2,7 @@
 
 function adc_endereco(){
     if(ehPost()){
-        $idusuario = t;
+        $idusuario = acessoPegarIdLogado();
         $logradouro = $_POST["logradouro"];
         $complemento = $_POST["complemento"];
         $bairro = $_POST["bairro"];
@@ -28,6 +28,7 @@ function adc_endereco(){
         }
     
         $msg = add_endereco($idusuario,$logradouro,$complemento,$bairro,$cidade,$cep);
+        echo $msg;
         redirecionar("endereco/adicionar");
         }else{
             exibir("endereco/adicionar");
@@ -40,7 +41,7 @@ function dlt_endereco($id){
     redirecionar("endereco/listar");
 }
 
-function listar_endereco($id){
+function listar_endereco(){
     $dados = [];
     $dados["endereco"] = slc_tds_endereco();
     exibir("endereco/listar", $dados);
@@ -53,14 +54,13 @@ function visu_endereco($id){
 
 function edtEndereco($id){
     if(ehPost()){
-        $idusuario = t;
         $logradouro = $_POST["logradouro"];
         $complemento = $_POST["complemento"];
         $bairro = $_POST["bairro"];
         $cidade = $_POST["cidade"];
         $cep = $_POST["cep"];
         
-        edt_endereco($idEndereco,$idusuario,$logradouro,$complemento,$bairro,$cidade,$cep);
+        edt_endereco($id,$logradouro,$complemento,$bairro,$cidade,$cep);
         redirecionar("endereco/listar");
     }else{
         $dados["endereco"] = slc_endereco($id);

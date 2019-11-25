@@ -43,3 +43,10 @@ function edt_endereco($Logradouro,$Complemento,$Bairro,$Cidade,$CEP,$id){
 	}
 	return 'Endereço alterado com sucesso';
 }
+
+function  peqarIdEndereço($id){
+	$sql = "SELECT idEndereco FROM endereco WHERE idUsuario = '$id'";
+	$resultado = mysqli_query($cnx = conn(), $sql);
+	$endereco = mysql_fetch_assoc($resultado);
+	return $endereco;
+}

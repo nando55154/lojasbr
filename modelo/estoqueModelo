@@ -1,0 +1,17 @@
+<?php
+
+function adicionarEstoque($idProduto, $quantidade) {
+	$sql = "INSERT INTO estoque VALUES('$idProduto, $quantidade')";
+	$resultado = mysqli_query($cnx = conn(), $sql);
+}
+
+function deletarEstoque($idProduto){
+	$sql = "DELETE FROM estoque WHERE idProduto = '$idProduto'";
+	$resultado = mysqli_query($cnx = conn(), $sql);
+}
+
+function editarEstoque($quantidade, $idProduto){
+	$sql = "UPDATE estoque SET Quantidade = '$quantidade' WHERE idProduto = '$idProduto'";
+	$resultado = mysqli_query($cnx = conn(), $sql);
+}
+

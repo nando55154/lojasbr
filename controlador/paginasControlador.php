@@ -6,7 +6,12 @@ require_once "modelo/produtoModelo.php";
 
 /** anon */
 function index() {
+    $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
+    $registros = 10;
+    $inicio = ($registros*$pagina)-$registros;
+    $total = cont_row($inicio, $registros);
+    $numPaginas = ceil($total/$registros);
     $dados = array();
-    $dados["produto"] = pegarTodosProdutos();
+    $dados["produto"] = pegarTodosProdutos($inicio,$registros);
     exibir("paginas/inicial", $dados);
 }

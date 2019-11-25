@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS  pedido(
 	idPedido INT(11) NOT NULL,
 	idUsuario INT(11) NOT NULL,
 	idEndereco INT(11) NOT NULL,	
-        dataCompra DATE NOT NULL,
+    dataCompra DATE NOT NULL,
 	PRIMARY KEY (idUsuario, idEndereco),
 	FOREIGN KEY (idUsuario) REFERENCES usuario(idUsuario) ON UPDATE CASCADE ON DELETE CASCADE,
 	FOREIGN KEY (idEndereco) REFERENCES endereco(idEndereco) ON UPDATE CASCADE ON DELETE CASCADE
@@ -86,12 +86,12 @@ CREATE TABLE IF NOT EXISTS estoque(
 
 CREATE TABLE IF NOT EXISTS categoria(
 	idCategoria INT(11) NOT NULL AUTO_INCREMENT,
-        Nome VARCHAR(20) NOT NULL,
+    Nome VARCHAR(20) NOT NULL,
 	PRIMARY KEY(idCategoria)
 );
 
 CREATE TABLE IF NOT EXISTS forma_pagamento (
-idformaPagamento INT NOT NULL AUTO_INCREMENT,
-descricao VARCHAR(100) NOT NULL,
-PRIMARY KEY (idformaPagamento)
+	idformaPagamento INT NOT NULL AUTO_INCREMENT,
+	descricao VARCHAR(100) NOT NULL,
+	PRIMARY KEY (idformaPagamento)
 );

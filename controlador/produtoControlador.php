@@ -11,6 +11,7 @@ function adicionar() {
         $preco = $_POST["preco"];
         $estoqueMin = $_POST["estoqueMin"];
         $estoqueMax = $_POST["estoqueMax"];
+		$estoque = $_POST["estoque"];
 
         //validação
 
@@ -37,19 +38,23 @@ function adicionar() {
             
         }if (strlen(trim(htmlentities($estoqueMax))) == 0) {
             $errors[] = "Insira a quantidade maxima ...";
+        }else {
+            
+        }if (strlen(trim(htmlentities($estoque))) == 0) {
+            $errors[] = "Insira a quantidade em estoque ...";
         }
         
-        $msg = adicionarProduto($preco, $nomeProduto, $descricao, $categoria,$estoqueMin, $estoqueMax);
+        $msg = adicionarProduto($preco, $nomeProduto, $descricao, $categoria,$estoqueMin, $estoqueMax, $estoque);
         echo $msg;
         redirecionar("produto/adicionar");
-    }else{
-        exibir("produto/formProd");
-    }
-}
+		}else{
+			exibir("produto/formProd");
+		}
+	}																	
 
 function deletar($id) {
-    deletarProduto($id);
-    redirecionar("produto/listar");
+	deletarProduto($id);
+	redirecionar("produto/listar");
 }
 
 function visualizarProduto($id) {
@@ -71,8 +76,8 @@ function editar($id){
         $preco = $_POST["preco"];
         $estoqueMin = $_POST["estoqueMin"];
         $estoqueMax = $_POST["estoqueMax"];
-        
-        editarProduto($id, $preco, $nomeProduto, $descricao, $categoria, $estoqueMin, $estoqueMax);
+		$estoque = $_POST["estoque"];        
+        editarProduto($id, $preco, $nomeProduto, $descricao, $categoria, $estoqueMin, $estoqueMax, $estoque);
         redirecionar("produto/listar");
         
     }else{

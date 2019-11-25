@@ -13,7 +13,8 @@ function adicionarCat() {
         }
         
         
-        adicionarCategoria($nome);
+        $msg=adicionarCategoria($nome);
+        echo $msg;
         redirecionar("categoria/adicionar");
     } else {
         exibir("categoria/adicionar");
