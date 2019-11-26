@@ -31,6 +31,7 @@ function editarCupom($id, $NomeCupom, $desconto){
     return 'Cupom alterado com sucesso!';
 }
 
+
 function visualizar_Cupom($id){
     $sql = "SELECT * FROM cupom WHERE idCupom = '$id'";
     $resultado = mysqli_query(conn(), $sql);
